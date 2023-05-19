@@ -1,0 +1,106 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Zachary Richatds, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Zach\OneDrive\Desktop\Template_L4\L4C\project.uvprojx
+Project File Date:  05/18/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling SysClock.c...
+compiling main.c...
+compiling LED.c...
+assembling startup_stm32l476xx.s...
+src/SPI.c(117): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  uint16_t read_data = SPI1->DR;
+           ~~~~~~~~~   ~~~~~~^~
+src/SPI.c(117): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  uint16_t read_data = SPI1->DR;
+           ^
+2 warnings generated.
+compiling SPI.c...
+src/SysTimer.c(53): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+1 warning generated.
+compiling SysTimer.c...
+src/accelerometer.c(22): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+    uint16_t receivedData = SPI_Transfer_Data(transferData);
+             ^
+src/accelerometer.c(40): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    int16_t rawX = (accRead(0x33)<<8)|accRead(0x32);  
+            ~~~~   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+src/accelerometer.c(41): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    int16_t rawY = (accRead(0x35)<<8)|accRead(0x34);
+            ~~~~   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+src/accelerometer.c(42): warning: implicit conversion loses integer precision: 'int' to 'int16_t' (aka 'short') [-Wimplicit-int-conversion]
+    int16_t rawZ = (accRead(0x37)<<8)|accRead(0x36);
+            ~~~~   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+src/accelerometer.c(36): warning: unused variable 'receivedData' [-Wunused-variable]
+                uint16_t receivedData = accRead(0x32);
+                         ^
+5 warnings generated.
+compiling accelerometer.c...
+src/UART.c(86): warning: comparison of integers of different signs: 'int' and 'uint32_t' (aka 'unsigned int') [-Wsign-compare]
+        for (i = 0; i < nBytes; i++) {
+                    ~ ^ ~~~~~~
+1 warning generated.
+compiling UART.c...
+src/UART_printf.c(14): warning: unused parameter 'f' [-Wunused-parameter]
+int fputc(int ch, FILE *f) { 
+                        ^
+src/UART_printf.c(23): warning: unused parameter 'f' [-Wunused-parameter]
+int fgetc(FILE *f) {  
+                ^
+2 warnings generated.
+compiling UART_printf.c...
+linking...
+Program Size: Code=9920 RO-data=996 RW-data=0 ZI-data=1720  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 11 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32L4xx_DFP.2.6.1.pack
+                Keil.STM32L4xx_DFP.2.6.1
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/Zach/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Zach/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.6.1/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
